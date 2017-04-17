@@ -1,0 +1,133 @@
+/*********************************************
+  Color Pallatte
+*********************************************/
+:root {
+  --bkg-light:          #eeeeee;
+  --bkg-dark:           #222222;
+  --brandon-blue:       #0000ff;
+  --brandon-red:        #ff0000;
+  --brandon-white:      #ffffff;
+  --brandon-black:      #000000;
+  --link-color:         #29B6F6;
+
+  /* UI Elements colors */
+  --nav-color:          var(--brandon-blue);
+  --nav-text-color:     var(--brandon-white);
+  --nav-link-hover:     var(--brandon-red);
+
+  /* Navigation bar Animations */
+  --nav-open-animation: cubic-bezier(0.29, 0.03, 0.39, 1.01);
+}
+
+/* Margins */
+[fullbleed] {
+  margin: 0;
+}
+
+/* UI Elements */
+
+/*********************************************
+  Navigation: Navbar
+*********************************************/
+[navbar] {
+  display: flex;
+  background-color: var(--nav-color);
+}
+[navbar] > div {
+  flex: 1;
+  color: var(--nav-text-color);
+}
+[navbar] > .logo {
+  text-align: center;
+}
+[navbar] .left, [navbar] .right {
+  opacity: 0;
+  vertical-align: middle;
+  margin: auto;
+  text-align: center;
+  animation-name: showNav;
+  animation-delay: 3200ms;
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+}
+@keyframes showNav {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+[navbar] .item {
+  padding: 20px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.2em;
+  transition: ease all 500ms;
+}
+/* Set navbar hover state */
+[navbar] .item:hover {
+  background-color: var(--nav-link-hover)
+}
+/* Set navbar links to nav text color */
+[navbar] a {
+  color: var(--nav-text-color);
+}
+@media screen and (max-width:800px) {
+  [navbar] .left, [navbar] .right {
+    display: none;
+  }
+  [navbar] > .logo {
+    text-align: left;
+  }
+  paper-icon-button {
+    vertical-align: middle;
+    margin: auto 20px;
+  }
+}
+@media screen and (min-width:801px) {
+  /* Make drawer disappear */
+  [drawer], paper-icon-button {
+    display: none;
+  }
+}
+
+/*********************************************
+  Navigation: Navbar Animation
+*********************************************/
+[nav-animate] {
+  height:100vh;
+  width: 100%;
+  animation-name: nav-ani;
+  animation-duration: 1500ms;
+  animation-timing-function: var(--nav-open-animation);
+  animation-fill-mode: forwards;
+  animation-delay: 3100ms;
+}
+[nav-animate] .logo {
+  display: flex;
+}
+[nav-animate] #Logo {
+  height: 75%;
+  width: 100%;
+  margin: auto;
+  vertical-align: middle;
+  align-items: center;
+}
+
+@keyframes nav-ani {
+  0% {
+    height:100vh;
+  }
+  100% {
+    height: 100px;
+  }
+}
+
+
+
+/* Links */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
