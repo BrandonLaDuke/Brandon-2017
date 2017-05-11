@@ -1,88 +1,80 @@
-<!DOCTYPE html>
-<html>
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Polymer Starter Kit">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
     <title>Brandon LaDuke</title>
-    <link rel="stylesheet" href="/framework/framework.css">
-    <link rel="stylesheet" href="/css/master.css">
+    <meta name="description" content="My App description">
+
+    <link rel="icon" href="/images/favicon.ico">
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- See https://goo.gl/qRE0vM -->
+    <meta name="theme-color" content="#3f51b5">
+
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="My App">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Brandon LaDuke">
+
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" href="/images/manifest/icon-48x48.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/manifest/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="/images/manifest/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/manifest/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/manifest/icon-192x192.png">
+
+    <!-- Tile icon for Windows 8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/images/manifest/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3f51b5">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Load and register pre-caching Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+
+    <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
+    <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <!-- Load your application shell -->
+    <link rel="import" href="/src/bl-app.html">
+
+    <!-- Add any global styles for body, document, etc. -->
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        line-height: 1.5;
+        min-height: 100vh;
+        background-color: #eeeeee;
+      }
+    </style>
   </head>
-  <body fullbleed>
-    <div navbar nav-animate>
-      <div class="left">
-        <a class="item" href="#">About</a>
-        <a class="item" href="#">Something</a>
-        <a class="item" href="#">Something</a>
-      </div>
-      <div class="logo">
-        <!-- Place logo here -->
-        <svg id="Logo" viewBox="0 0 328.47 344.49">
-                  <title>bl_logo</title>
-                  <path class="path" id="path" fill="none" stroke-width="4"
-                        d="M280.44,66.17S342.13,65,365,74.72c18.26,7.78,49.85,23,26,75.78-27.5,61-93.68,78.5-93.68,78.5s44.29,11,42.48,55.5-43.58,79.89-43.58,79.89H238.5s71-41.78,46-94.89c-11.93-25.34-81.83-21.64-81.83-21.64l15-34.95S311.72,225.5,342,160c35.76-77.35-76.76-58.32-76.76-58.32Z"
-                        transform="translate(-71.07 -66.12)"/>
-                  <path class="pathl fillWhite" id="path" fill="none" stroke-width="4"
-                           d="M195.19 0.04L59.38 313.53 213.91 313.38 178.93 344.49 0 344.49 152.75 0.04 195.19 0.04z"/>
-                  <style>
-                    #Logo {
-                      padding: 10px;
-                    }
-                    .path {
-                      stroke: rgba(255,255,255,1);
-                      stroke-dasharray: 1085.1591796875;
-                      stroke-dashoffset: 1085.1591796875;
-                      animation: dash1 3s linear forwards;
-                    }
-                    .pathl {
-                      stroke: rgba(255,255,255,1);
-                      stroke-dasharray: 1141.156494140625;
-                      stroke-dashoffset: 1141.156494140625;
-                      fill: rgba(255,255,255,0);
-                      animation: dash 3s linear forwards;
-                    }
-
-
-                    @keyframes dash1 {
-                      0% {
-                        stroke-dashoffset: 1141.156494140625;
-                      }
-                      50% {
-                        stroke-dashoffset: 0;
-                        fill: rgba(255, 255, 255, 0);
-                        stroke-width: 4;
-                      }
-                      100% {
-                        stroke-dashoffset: 0;
-                        fill: rgba(255, 255, 255, 1);
-                        stroke-width: 0;
-                      }
-                    }
-
-                    @keyframes dash {
-                      0% {
-                        stroke-dashoffset: 1085.1591796875;
-                      }
-                      50% {
-                        stroke-dashoffset: 0;
-                        fill: rgba(255, 255, 255, 0);
-                        stroke-width: 4;
-                      }
-                      100% {
-                        stroke-dashoffset: 0;
-                        fill: rgba(255, 255, 255, 1);
-                        stroke-width: 0;
-                      }
-                    }
-                  </style>
-                </svg>
-
-      </div>
-      <div class="right">
-        <a class="item" href="#">About</a>
-        <a class="item" href="#">Something</a>
-        <a class="item" href="#">Something</a>
-      </div>
-    </div>
-    <script type="text/javascript" src="/framework/framework.js"></script>
+  <body>
+    <bl-app></bl-app>
+    <!-- Built with love using Polymer Starter Kit -->
   </body>
 </html>

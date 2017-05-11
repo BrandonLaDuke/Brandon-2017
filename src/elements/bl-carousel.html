@@ -1,0 +1,227 @@
+<link rel="import" href="/bower_components/polymer/polymer-element.html">
+<link rel="import" href="/src/shared-styles.html">
+<link rel="import" href="/src/elements/bl-navbar-item.html">
+
+<dom-module id="bl-carousel">
+  <template>
+    <style include="shared-styles">
+      :host {
+
+      }
+      /* ::slotted Atributes */
+
+      :host ::slotted(*) {
+        pointer-events: auto;
+
+      }
+
+      /*********************************************
+        Carousel
+      *********************************************/
+      .c {
+  		position: relative;
+			max-width: 74em;
+			margin: 0 auto;
+		}
+		.c-list-container {
+			overflow: hidden;
+			position: relative;
+		}
+		.c-list {
+			width: 99999em;
+			position: relative;
+			left: 0;
+			-webkit-transition: left 0.5s ease-out;
+     		-moz-transition: left 0.5s ease-out;
+       		-o-transition: left 0.5s ease-out;
+        	transition: left 0.5s ease-out;
+		}
+
+		:host ::slotted(li) {
+			float: left;
+		}
+		:host ::slotted(li a) {
+			display: block;
+		}
+		:host ::slotted(c img) {
+			display: block;
+		}
+		.c h2 {
+			margin-top: 0;
+		}
+		.summary {
+			padding: 1em;
+		}
+		.c-nav {
+			clear: both;
+			overflow: hidden;
+			border-top: 1px solid #808080;
+		}
+		.c-nav a {
+			float: left;
+			width: 50%;
+			padding: 1em;
+			-webkit-transition: opacity 0.5s ease-out;
+     		-moz-transition: opacity 0.5s ease-out;
+       		-o-transition: opacity 0.5s ease-out;
+        	transition: opacity 0.5s ease-out;
+		}
+		.c-nav a.next {
+			border-left: 1px solid #808080;
+			text-align: right;
+		}
+		.c-nav a.inactive {
+			opacity: 0.2;
+
+		}
+
+		/* Medium */
+		@media screen and (min-width: 35em) {
+			.c {
+				padding: 1em 0.5em 0;
+			}
+			.c li {
+				padding: 0 0.5em;
+			}
+			body:after { /* Conditional CSS http://adactio.com/journal/5429/ */
+		        content: 'medium';
+		        display: none;
+	   		}
+		}
+
+
+		/* Large */
+		@media screen and (min-width: 56.25em) {
+			body:after { /* Conditional CSS http://adactio.com/journal/5429/ */
+		        content: 'large';
+		        display: none;
+	   		}
+		}
+
+		/*Large with room to spare on either side */
+		@media screen and (min-width: 82em) {
+			.c-nav a {
+				position: absolute;
+				top: 40%;
+				left: -4em;
+				width: 4em;
+				height: 2em;
+				padding: 0;
+				margin-top: -1em;
+			}
+			.c-nav a.next {
+				left: auto;
+				right: -4em;
+				border: 0;
+			}
+		}
+
+    </style>
+
+    <!--Pattern HTML-->
+  <div id="pattern" class="pattern">
+  	<div class="c">
+			<div class="c-list-container">
+				<ul class="c-list">
+					<li>
+						<a href="#">
+							<img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_landscape.png" alt="FPO Image" />
+							<div class="summary">
+								<h2>This is the first title</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et porta tortor. </p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_landscape.png" alt="FPO Image" />
+							<div class="summary">
+								<h2>This is the second title</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et porta tortor. </p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_landscape.png" alt="FPO Image" />
+							<div class="summary">
+								<h2>This is the third title</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et porta tortor. </p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_landscape.png" alt="FPO Image" />
+							<div class="summary">
+								<h2>This is the fourth title</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et porta tortor. </p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_landscape.png" alt="FPO Image" />
+							<div class="summary">
+								<h2>This is the fifth title</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et porta tortor. </p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_landscape.png" alt="FPO Image" />
+							<div class="summary">
+								<h2>This is the sixth title</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et porta tortor. </p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_landscape.png" alt="FPO Image" />
+							<div class="summary">
+								<h2>This is the seventh title</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et porta tortor. </p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_landscape.png" alt="FPO Image" />
+							<div class="summary">
+								<h2>This is the eighth title</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et porta tortor. </p>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://bradfrost.github.com/this-is-responsive/patterns/images/fpo_landscape.png" alt="FPO Image" />
+							<div class="summary">
+								<h2>This is the ninth title</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget lacus erat, sit amet tempor nibh. Aliquam erat volutpat. Nulla et porta tortor. </p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<nav class="c-nav">
+				<a href="#" class="prev">&larr; Prev</a>
+				<a href="#" class="next">Next &rarr;</a>
+			</nav>
+		</div>
+
+	</div>
+	<!--End Pattern HTML-->
+
+  </template>
+
+  <script>
+    class BLCarousel extends Polymer.Element {
+      static get is() { return 'bl-carousel'; }
+    }
+
+    window.customElements.define(BLCarousel.is, BLCarousel);
+  </script>
+</dom-module>
