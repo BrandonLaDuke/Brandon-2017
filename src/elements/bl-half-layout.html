@@ -4,10 +4,17 @@
 <dom-module id="bl-half-layout">
   <template>
     <style include="shared-styles">
+      .flex {
+        display: flex;
+        margin: 1em auto 0 auto;
+      }
+      ::slotted(div) {
+        flex: 1;
+      }
     </style>
 
-    <div>
-
+    <div class="flex">
+      <slot></slot>
     </div>
 
   </template>
