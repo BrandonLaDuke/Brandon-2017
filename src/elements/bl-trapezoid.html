@@ -4,15 +4,19 @@
 <dom-module id="bl-trapezoid">
   <template>
     <style include="shared-styles">
-      ::slotted(div) {
-        flex: 1;
+
+      div {
+        padding: 50px;
+      }
+      ::slotted(.t-img) {
+        margin: auto;
+        width: 100%;
       }
 
       /* atribute styles */
       :host([top][layout=left]) {
         display: block;
         background-color: red;
-        height: 100vh;
       }
     </style>
 

@@ -13,6 +13,12 @@
   --post-button-hover: #ff6f00;
 }
 
+[button] {
+  text-decoration: none;
+  display: inline-block;
+  background-color: blue;
+}
+
 label {
   color: #fff;
 }
