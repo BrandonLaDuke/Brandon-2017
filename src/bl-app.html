@@ -27,7 +27,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <style>
       :host {
-        --app-primary-color: #4285f4;
+        --app-primary-color:  #4285f4;
         --app-secondary-color: black;
 
         --bkg-light:          #eeeeee;
@@ -37,6 +37,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --brandon-white:      #ffffff;
         --brandon-black:      #000000;
         --link-color:         #29B6F6;
+
+        --gutter:             1em;
       }
 
       app-drawer-layout:not([narrow]) [drawer-toggle] {
@@ -77,6 +79,61 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           font-size: 1.2em;
           transition: ease all 500ms
       }
+
+      /* Footer Styles */
+      footer {
+        background-color: #222222;
+      }
+      .footer-flex {
+        display: block;
+        margin: 0;
+        padding: 1em;
+      }
+      .footer-left {
+
+      }
+      .footer-logo {
+
+      }
+      .footer-logo-flex {
+        display: flex;
+      }
+      .footer-logo-flex img {
+        width: 100px; height: auto;
+        margin: auto;
+        text-align: center;
+      }
+      .footer-logo h2 {
+        color: #ffffff;
+        text-align: center;
+        margin: 0;
+      }
+      .footer-right {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1em auto 0 auto;
+      }
+      .footer-right a {
+        display: block;
+        text-align: left;
+        margin: 0;
+        padding: var(--gutter);
+        text-decoration: none;
+        background-color: inherit;
+        color: #ffffff;
+        transition: 500ms ease all;
+        display: none;
+      }
+      .footer-right a:hover {
+        color: yellow;
+      }
+      .copyright {
+        padding: 2em;
+        text-align: center;
+        color: #ffffff;
+        background-color: #3333ff;
+      }
+
       @media screen and (max-width: 550px) {
         [left] {
           display: none;
@@ -138,6 +195,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           <bl-blog name="blog"></bl-blog>
           <bl-view404 name="view404"></bl-view404>
         </iron-pages>
+
+        <footer>
+          <div class="footer-flex">
+            <div class="footer-left">
+              <div class="footer-logo">
+                <div class="footer-logo-flex">
+                  <img src="/images/bl-logo.svg" alt="Brandon LaDuke (B L Logo)">
+                </div>
+
+                <h2>Brandon LaDuke</h2>
+              </div>
+            </div>
+            <div class="footer-right">
+              <a href="/home">Home</a>
+              <a href="/about">About</a>
+              <a href="/web">Web</a>
+              <a href="/games">Games</a>
+              <a href="/photography">Photography</a>
+              <a href="/blog">Blog</a>
+            </div>
+          </div>
+          <div class="copyright">
+            &copy; 2017 Brandon LaDuke
+          </div>
+        </footer>
       </app-header-layout>
     </app-drawer-layout>
   </template>
