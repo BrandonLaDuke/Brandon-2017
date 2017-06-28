@@ -1,0 +1,53 @@
+<link rel="import" href="/bower_components/polymer/polymer-element.html">
+<link rel="import" href="/src/shared-styles.html">
+<link rel="import" href="/src/elements/bl-navbar-item.html">
+
+<dom-module id="bl-navbar">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: flex;
+        height: 64px;
+        padding: 0px 16px;
+        pointer-events: auto;
+
+
+        /* UI Elements colors */
+        --nav-color:          var(--brandon-blue);
+        --nav-text-color:     var(--brandon-white);
+        --nav-link-hover:     var(--brandon-red);
+
+        /* Navigation bar Animations */
+        --nav-open-animation: cubic-bezier(0.29, 0.03, 0.39, 1.01);
+      }
+      /* ::slotted Atributes */
+
+      :host ::slotted(*) {
+        pointer-events: auto;
+        display: inline-block;
+      }
+
+      :host ::slotted([left]) {
+        display: inline-block;
+      }
+
+      /*********************************************
+        Navigation: Navbar Animation
+      *********************************************/
+
+    </style>
+
+    <div navbar nav-animate>
+      <slot></slot>
+    </div>
+
+  </template>
+
+  <script>
+    class BLNavbar extends Polymer.Element {
+      static get is() { return 'bl-navbar'; }
+    }
+
+    window.customElements.define(BLNavbar.is, BLNavbar);
+  </script>
+</dom-module>

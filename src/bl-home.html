@@ -1,0 +1,104 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+<link rel="import" href="/src/elements/bl-trapezoid.html">
+
+
+
+<dom-module id="bl-home">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+      }
+
+      .head-img {
+        background-color: #222;
+        padding: 30px;
+      }
+      .profile-img {
+        width: 200px; height: 200px;
+        margin: auto;
+      }
+      .profile-img img {
+        width: 100%;
+        border-radius: 50%;
+      }
+      .head-img .text h1 {
+        font-size: 2em;
+        color: #fff;
+        text-align: center;
+      }
+      .head-img .text h2 {
+        color: #fff;
+        text-align: center;
+        margin-top: 0;
+      }
+      .button {
+        display: inline-block;
+        text-decoration: none;
+        background-color: blue;
+        border-radius: 30px;
+        padding: 15px;
+        color: #ffffff;
+        transition: 500ms ease all;
+      }
+      .button:hover {
+        background-color: red;
+      }
+
+      @media screen and (min-width:200px) {
+
+      }
+
+    </style>
+
+    <div class="head-img">
+      <div class="profile-img">
+        <img src="/images/home/brandonladuke.jpg" alt="Brandon LaDuke">
+      </div>
+      <div class="text">
+        <h1>Brandon LaDuke</h1>
+        <h2>Developer | Designer | Photographer</h2>
+      </div>
+    </div>
+    <bl-trapezoid top layout="left">
+      <div class="t-img">
+        <img src="http://placehold.it/1000x500" width="100%" alt="">
+      </div>
+      <div class="t-text">
+        <h2>BrandonLaDuke.com</h2>
+        <p>Learn more about how I created this site.</p>
+        <a href="#" class="button">View Case Study</a>
+      </div>
+    </bl-trapezoid>
+    <bl-trapezoid top layout="right">
+      <div class="t-img">
+        <img src="http://placehold.it/1000x500" width="100%" alt="">
+      </div>
+      <div class="t-text">
+        <h2>Re:Memorize</h2>
+        <p>Beta is now availble for download on Windows!</p>
+        <a href="#" class="button">View Game</a>
+      </div>
+    </bl-trapezoid>
+
+  </template>
+
+  <script>
+    class BLHome extends Polymer.Element {
+      static get is() { return 'bl-home'; }
+    }
+
+    window.customElements.define(BLHome.is, BLHome);
+  </script>
+</dom-module>
