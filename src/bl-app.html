@@ -21,7 +21,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
-<link rel="import" href="/src/my-icons.html">
+<link rel="import" href="my-icons.html">
 
 <dom-module id="bl-app">
   <template>
@@ -131,7 +131,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         background-color: inherit;
         color: #ffffff;
         transition: 500ms ease all;
-        
+
       }
       .footer-right a:hover {
         color: yellow;
@@ -180,6 +180,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <bl-navbar navbar nav-animate>
             <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+            <div class="smallscreen">
+              Brandon LaDuke
+            </div>
             <div left>
               <bl-navbar-item><a href="/home">Home</a></bl-navbar-item>
               <bl-navbar-item><a href="/about">About</a></bl-navbar-item>
@@ -198,7 +201,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             role="main">
           <bl-home name="home"></bl-home>
           <bl-about name="about"></bl-about>
-          <bl-web name="web"></bl-web>
+          <bl-web name="web" route="subroute"></bl-web>
           <bl-games name="games"></bl-games>
           <bl-photography name="photography"></bl-photography>
           <bl-blog name="blog"></bl-blog>
