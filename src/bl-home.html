@@ -10,7 +10,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
-<link rel="import" href="/src/elements/bl-trapezoid.html">
 
 
 
@@ -22,80 +21,59 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       .head-img {
-        background-color: #222;
+        background:
+                    linear-gradient(0deg, #222, transparent 50%),
+                    url(../images/home/treeprogress1.jpg) no-repeat center;
         padding: 30px;
+        height: 100vh;
       }
-      .profile-img {
-        width: 200px; height: 200px;
-        margin: auto;
+
+
+      /* recent projects tiles */
+
+      #recent-projects {
+        background-color: #222;
+        width: auto;
+        padding: 1em;
       }
-      .profile-img img {
-        width: 100%;
-        border-radius: 50%;
-      }
-      .head-img .text h1 {
-        font-size: 2em;
-        color: #fff;
-        text-align: center;
-      }
-      .head-img .text h2 {
-        color: #fff;
-        text-align: center;
-        margin-top: 0;
-      }
-      @media screen and (max-width: 494px) {
-        .head-img .text h2 {
-          font-size: 1.1em;
-        }
-      }
-      .button {
-        display: inline-block;
-        text-decoration: none;
-        background-color: blue;
-        border-radius: 30px;
-        padding: 15px;
+      .project {
+        margin-bottom: 1em;
+        background-color: #111;
         color: #ffffff;
-        transition: 500ms ease all;
+        padding: 1em;
       }
-      .button:hover {
+      .project img {
+        width: 100%;
+      }
+      .project a {
+        color: #ffffff;
+        text-decoration: none;
+        width: auto;
+        text-align: center;
+        display: block;
+        padding: 1em;
         background-color: red;
-      }
-
-      @media screen and (min-width:200px) {
-
       }
 
     </style>
 
     <div class="head-img">
-      <div class="profile-img">
-        <img src="/images/home/brandonladuke.jpg" alt="Brandon LaDuke">
-      </div>
-      <div class="text">
-        <h1>Brandon LaDuke</h1>
-        <h2>Developer | Designer | Photographer</h2>
-      </div>
+
     </div>
-    <bl-trapezoid top layout="left">
-      <div class="t-img">
-        <img src="http://placehold.it/1000x500" width="100%" alt="">
-      </div>
-      <div class="t-text">
+    <section id="recent-projects">
+      <div class="project">
+        <img src="http://placehold.it/500x200" alt="">
         <h2>BrandonLaDuke.com</h2>
-        <p>Learn more about how I created this site.</p>
-        <a href="#" class="button">View Case Study</a>
+        <p>hbksyv kuys gvkuy sgudf jusy vg</p>
+        <a href="#">View Case Study</a>
       </div>
-    </bl-trapezoid>
-    <bl-trapezoid top layout="right">
-      <div class="t-img">
-        <img src="http://placehold.it/1000x500" width="100%" alt="">
+      <div class="project">
+        <img src="http://placehold.it/500x200" alt="">
+        <h2>BrandonLaDuke.com</h2>
+        <p>hbksyv kuys gvkuy sgudf jusy vg</p>
+        <a href="#">View Case Study</a>
       </div>
-      <div class="t-text">
-        <h2>Re:Memorize</h2>
-        <p>Beta is now availble for download on Windows!</p>
-        <a href="#" class="button">View Game</a>
-      </div>
-    </bl-trapezoid>
+    </section>
 
   </template>
 

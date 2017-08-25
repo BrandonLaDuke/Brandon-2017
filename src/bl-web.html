@@ -20,20 +20,21 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
       }
     </style>
+
     <app-route
-       route="[[route]]"
-       pattern="/:subpage"
+       route="{{route}}"
+       pattern="/web/:subpage"
        data="{{data}}"
        tail="{{tail}}"></app-route>
-       <iron-selector selected="[[action]]" attr-for-selected="title" class="drawer-list" role="web">
+       <iron-selector selected="[[subpage]]" attr-for-selected="title" class="drawer-list" role="web">
          <a title="prp" href="/web/prp">PRP</a>
        </iron-selector>
 
-   <iron-pages selected="[[data.subpage]]" attr-for-selected="name" fallback-selection="view404">
-       <bl-web-view name=""></bl-web-view>
+   <iron-pages selected="[[subpage]]" attr-for-selected="title" fallback-selection="view404">
+       <bl-web-view title=""></bl-web-view>
 
-       <bl-prp name="prp"></bl-prp>
-       <bl-view404 name="view404"></bl-view404>
+       <bl-prp title="prp"></bl-prp>
+       <bl-view404 title="view404"></bl-view404>
    </iron-pages>
 
   </template>
@@ -41,6 +42,54 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script>
     class BLWeb extends Polymer.Element {
       static get is() { return 'bl-web'; }
+
+      static get properties() {
+        return {
+          subpage: {
+            type: String,
+            reflectToAttribute: true,
+            observer: '_pageChanged',
+          },
+        };
+      }
+
+      static get observers() {
+        return [
+          '_routeSubPageChanged(data.subpage)',
+        ];
+      }
+
+      _routeSubPageChanged(subpage) {
+        // Polymer 2.0 will call with `undefined` on initialization.
+        // Ignore until we are properly called with a string.
+        if (subpage === undefined) {
+          return;
+        }
+
+        // If no page was found in the route data, page will be an empty string.
+        // Deault to 'view1' in that case.
+        this.subpage = subpage || 'prp';
+
+        // Close a non-persistent drawer when the page & route are changed.
+        if (!this.$.drawer.persistent) {
+          this.$.drawer.close();
+        }
+      }
+
+      _subPageChanged(subpage) {
+        // Load page import on demand. Show 404 page if fails
+        var resolvedSubPageUrl = this.resolveUrl('bl-' + subpage + '.html');
+        Polymer.importHref(
+            resolvedSubPageUrl,
+            null,
+            this._showSubPage404.bind(this),
+            true);
+      }
+
+      _showSubPage404() {
+        this.subpage = 'view404';
+      }
+
     }
 
 
