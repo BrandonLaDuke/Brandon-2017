@@ -18,16 +18,30 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
       :host {
         display: block;
+        background-color: #000000;
       }
 
       .head-img {
-        background:
-                    linear-gradient(0deg, #222, transparent 50%),
+        background: linear-gradient(0deg, #222, transparent 50%),
                     url(../images/home/treeprogress1.jpg) no-repeat center;
+        background-size: cover;
         padding: 30px;
-        height: 100vh;
+        height: 300px;
       }
 
+
+      /* Featured Section */
+
+      #featured {
+        margin: 10px;
+        padding: 25px;
+        color: #eeeeee;
+        background-color: rgba(34, 65, 76, 0.5);
+      }
+      #featured h1 {
+        margin: 0;
+        color: #eeeeee;
+      }
 
       /* recent projects tiles */
 
@@ -60,6 +74,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <div class="head-img">
 
     </div>
+    <section id="featured">
+      <h1>Feature section</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </section>
     <section id="recent-projects">
       <div class="project">
         <img src="http://placehold.it/500x200" alt="">
