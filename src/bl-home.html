@@ -88,57 +88,147 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
       }
+
+      /* media queries */
+      @media (min-width:680px) {
+        .wrapper {
+          display: grid;
+          grid-template-areas:
+          "header header header"
+          "featured featured featured"
+          "projects projects projects"
+          "blogs blogs blogs";
+        }
+        .head-img {
+          grid-area: header;
+          height: 400px;
+        }
+        #featured {
+          grid-area: featured;
+        }
+        #recent-projects {
+          grid-area: projects;
+        }
+        #blog-posts {
+          grid-area: blogs;
+          display: grid;
+          grid-auto-columns: 1fr 1fr;
+          grid-template-rows: auto;
+        }
+
+        /* recent-projects grid */
+        #recent-projects .cards {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto;
+          grid-gap: 1em;
+        }
+      }
+      @media (min-width:880px) {
+        .head-img {
+          height: 450px;
+        }
+        #blog-posts .cards {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto;
+          grid-gap: 1em;
+        }
+      }
+      /* laptop */
+      @media (min-width:1000px) {
+        .head-img {
+          height: 550px;
+        }
+        .wrapper {
+          grid-template-areas:
+          "header header header"
+          "featured featured featured"
+          "projects projects blogs";
+        }
+        #blog-posts .cards {
+          display: block;
+        }
+      }
+      @media (min-width:1300px) {
+        .head-img {
+          height: 100vh;
+        }
+        .wrapper {
+          grid-template-columns: 5% 1fr 1fr 1fr 5%;
+          grid-template-areas:
+          "header header header header header"
+          "featured featured featured featured featured"
+          ". projects projects blogs .";
+        }
+      }
     </style>
 
-    <div class="head-img">
-      <h1>Brandon LaDuke</h1>
+    <div class="wrapper">
+      <div class="head-img">
+        <h1>Brandon LaDuke</h1>
+      </div>
+
+      <section id="featured">
+        <h1>Feature section</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </section>
+
+      <section id="recent-projects">
+        <h1>Recent Projects</h1>
+        <div class="cards">
+          <div class="project">
+            <img src="http://placehold.it/500x200" alt="">
+            <h2>BrandonLaDuke.com</h2>
+            <p>hbksyv kuys gvkuy sgudf jusy vg</p>
+            <a href="#">View Case Study</a>
+          </div>
+          <div class="project">
+            <img src="http://placehold.it/500x200" alt="">
+            <h2>BrandonLaDuke.com</h2>
+            <p>hbksyv kuys gvkuy sgudf jusy vg</p>
+            <a href="#">View Case Study</a>
+          </div>
+          <div class="project">
+            <img src="http://placehold.it/500x200" alt="">
+            <h2>BrandonLaDuke.com</h2>
+            <p>hbksyv kuys gvkuy sgudf jusy vg</p>
+            <a href="#">View Case Study</a>
+          </div>
+          <div class="project">
+            <img src="http://placehold.it/500x200" alt="">
+            <h2>BrandonLaDuke.com</h2>
+            <p>hbksyv kuys gvkuy sgudf jusy vg</p>
+            <a href="#">View Case Study</a>
+          </div>
+        </div>
+      </section>
+      <section id="blog-posts">
+        <h1>Blog Posts</h1>
+        <div class="cards">
+          <div class="post">
+            <h2>Recent Post Title fyjt jtyf jytf jtyf</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="#">Read More...</a>
+          </div>
+          <div class="post">
+            <h2>Recent Post Title fyjt jtyf jytf jtyf</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="#">Read More...</a>
+          </div>
+          <div class="post">
+            <h2>Recent Post Title fyjt jtyf jytf jtyf</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="#">Read More...</a>
+          </div>
+          <div class="post">
+            <h2>Recent Post Title fyjt jtyf jytf jtyf</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="#">Read More...</a>
+          </div>
+        </div>
+      </section>
     </div>
-
-    <section id="featured">
-      <h1>Feature section</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </section>
-
-    <section id="recent-projects">
-      <h1>Recent Projects</h1>
-      <div class="project">
-        <img src="http://placehold.it/500x200" alt="">
-        <h2>BrandonLaDuke.com</h2>
-        <p>hbksyv kuys gvkuy sgudf jusy vg</p>
-        <a href="#">View Case Study</a>
-      </div>
-      <div class="project">
-        <img src="http://placehold.it/500x200" alt="">
-        <h2>BrandonLaDuke.com</h2>
-        <p>hbksyv kuys gvkuy sgudf jusy vg</p>
-        <a href="#">View Case Study</a>
-      </div>
-      <div class="project">
-        <img src="http://placehold.it/500x200" alt="">
-        <h2>BrandonLaDuke.com</h2>
-        <p>hbksyv kuys gvkuy sgudf jusy vg</p>
-        <a href="#">View Case Study</a>
-      </div>
-      <div class="project">
-        <img src="http://placehold.it/500x200" alt="">
-        <h2>BrandonLaDuke.com</h2>
-        <p>hbksyv kuys gvkuy sgudf jusy vg</p>
-        <a href="#">View Case Study</a>
-      </div>
-    </section>
-    <section id="blog-posts">
-      <h1>Blog Posts</h1>
-      <div class="post">
-        <h2>Recent Post Title fyjt jtyf jytf jtyf</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <a href="#">Read More...</a>
-      </div>
-      <div class="post">
-        <h2>Recent Post Title fyjt jtyf jytf jtyf</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <a href="#">Read More...</a>
-      </div>
-    </section>
 
   </template>
 
