@@ -22,13 +22,18 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       .head-img {
-        background: linear-gradient(0deg, #222, transparent 50%),
+        background: linear-gradient(0deg, #000, transparent 50%),
                     url(../images/home/treeprogress1.jpg) no-repeat center;
         background-size: cover;
         padding: 30px;
         height: 300px;
       }
-
+      /* Headings */
+      h1 {
+        color: #fff;
+        text-align: center;
+        margin: 1em 0 0.5em 0;
+      }
 
       /* Featured Section */
 
@@ -38,18 +43,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: #eeeeee;
         background-color: rgba(34, 65, 76, 0.5);
       }
-      #featured h1 {
-        margin: 0;
-        color: #eeeeee;
-      }
 
       /* recent projects tiles */
 
       #recent-projects {
-        background-color: #222;
         width: auto;
         padding: 1em;
       }
+
       .project {
         margin-bottom: 1em;
         background-color: #111;
@@ -69,16 +70,37 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         background-color: red;
       }
 
+      /* Blog Posts */
+      #blog-posts {
+        padding: 1em;
+      }
+      #blog-posts .post {
+        background-color: #f5f7ff;
+        color: #222222;
+        padding: 1em;
+        border-bottom: 3px solid #000000;
+        border-radius: 10px;
+        margin-top: 1.2em;
+      }
+      #blog-posts .post p {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+      }
     </style>
 
     <div class="head-img">
-
+      <h1>Brandon LaDuke</h1>
     </div>
+
     <section id="featured">
       <h1>Feature section</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </section>
+
     <section id="recent-projects">
+      <h1>Recent Projects</h1>
       <div class="project">
         <img src="http://placehold.it/500x200" alt="">
         <h2>BrandonLaDuke.com</h2>
@@ -90,6 +112,31 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <h2>BrandonLaDuke.com</h2>
         <p>hbksyv kuys gvkuy sgudf jusy vg</p>
         <a href="#">View Case Study</a>
+      </div>
+      <div class="project">
+        <img src="http://placehold.it/500x200" alt="">
+        <h2>BrandonLaDuke.com</h2>
+        <p>hbksyv kuys gvkuy sgudf jusy vg</p>
+        <a href="#">View Case Study</a>
+      </div>
+      <div class="project">
+        <img src="http://placehold.it/500x200" alt="">
+        <h2>BrandonLaDuke.com</h2>
+        <p>hbksyv kuys gvkuy sgudf jusy vg</p>
+        <a href="#">View Case Study</a>
+      </div>
+    </section>
+    <section id="blog-posts">
+      <h1>Blog Posts</h1>
+      <div class="post">
+        <h2>Recent Post Title fyjt jtyf jytf jtyf</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a href="#">Read More...</a>
+      </div>
+      <div class="post">
+        <h2>Recent Post Title fyjt jtyf jytf jtyf</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <a href="#">Read More...</a>
       </div>
     </section>
 

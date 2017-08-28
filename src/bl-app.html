@@ -54,6 +54,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --paper-icon-button-ink-color: white;
       }
 
+      .name-header {
+        margin: auto;
+      }
 
       .drawer-list {
         margin: 0 20px;
@@ -71,7 +74,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: black;
         font-weight: bold;
       }
-
+      [drawer-toggle] {
+        margin: auto;
+      }
       [navbar] .item {
           padding: 20px;
           display: inline-block;
@@ -82,71 +87,43 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       /* Footer Styles */
       footer {
-        background-color: #222222;
-      }
-      .footer-flex {
-        display: block;
-        margin: 0;
+        background-color: firebrick;
         padding: 1em;
       }
-      .footer-left {
-
+      #social h1 {
+        color: #ffffff;
+        text-align: center;
+        font-weight: 100;
+        text-transform: uppercase;
       }
-      .footer-logo {
-
+      .socials {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: .5em;
+        margin: 0 3em;
+        padding: 0;
       }
-      .footer-logo-flex {
-        display: flex;
-      }
-      .footer-logo-flex img {
-        width: 100px; height: auto;
+      .social-item {
+        list-style: none;
         margin: auto;
-        text-align: center;
+        background-color: blue;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
       }
-      .footer-logo h2 {
-        color: #ffffff;
-        text-align: center;
-        margin: 0;
-      }
-      .footer-right {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 1em auto 0 auto;
-      }
-      .footer-right .social {
+      .social-item a {
+        height: inherit;
         display: block;
+        background-image: url(../images/icons/gplus-01.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 90%;
       }
-      .footer-right .social a {
-        width: 50px; height: 50px;
-      }
-      .footer-right .social .gplus {
-        background-image: url(/images/icons/gplus-01.svg);
-      }
-      .footer-right a {
-        display: block;
-        text-align: left;
-        margin: 0;
-        padding: var(--gutter);
-        text-decoration: none;
-        background-color: inherit;
-        color: #ffffff;
-        transition: 500ms ease all;
-
-      }
-      .footer-right a:hover {
-        color: yellow;
-      }
-      .copyright {
-        padding: 2em;
+      .legal {
         text-align: center;
-        color: #ffffff;
-        background-color: #3333ff;
-      }
-
-      @media screen and (max-width: 550px) {
-        [left] {
-          display: none;
-        }
+        font-size: 0.85em;
+        font-weight: 200;
       }
 
 
@@ -180,17 +157,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
           <bl-navbar navbar nav-animate>
             <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
-            <div class="smallscreen">
-              Brandon LaDuke
-            </div>
-            <div left>
-              <bl-navbar-item><a href="/home">Home</a></bl-navbar-item>
-              <bl-navbar-item><a href="/about">About</a></bl-navbar-item>
-              <bl-navbar-item><a href="/web">Web</a></bl-navbar-item>
-              <bl-navbar-item><a href="/games">Games</a></bl-navbar-item>
-              <bl-navbar-item><a href="/photography">Photography</a></bl-navbar-item>
-              <bl-navbar-item><a href="/blog">Blog</a></bl-navbar-item>
-            </div>
+            <h2 class="name-header">
+
+            </h2>
           </bl-navbar>
         </app-header>
 
@@ -209,31 +178,40 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         </iron-pages>
 
         <footer>
-          <div class="footer-flex">
-            <div class="footer-left">
-              <div class="footer-logo">
-                <div class="footer-logo-flex">
-                  <img src="/images/bl-logo.svg" alt="Brandon LaDuke (B L Logo)">
-                </div>
-
-                <h2>Brandon LaDuke</h2>
+          <section id="social">
+            <h1>Connect with Brandon</h1>
+            <ul class="socials">
+              <li class="social-item">
+                <a href="#" class="email" title="Email"></a>
+              </li>
+              <li class="social-item">
+                <a href="#" class="facebook" title="Facebook"></a>
+              </li>
+              <li class="social-item">
+                <a href="#" class="instagram" title="Instagram"></a>
+              </li>
+              <li class="social-item">
+                <a href="#" class="gplus" title="Google+"></a>
+              </li>
+              <li class="social-item">
+                <a href="#" class="Twitter" title="twitter"></a>
+              </li>
+              <li class="social-item">
+                <a href="#" class="youtube" title="YouTube"></a>
+              </li>
+              <li class="social-item">
+                <a href="#" class="linkedin" title="LinkedIn"></a>
+              </li>
+              <li class="social-item">
+                <a href="#" class="github" title="github"></a>
+              </li>
+            </ul>
+            <div class="legal">
+              <div class="copyright">
+                <p>&copy; 2017 Brandon LaDuke. All rights reserved.</p>
               </div>
             </div>
-            <div class="footer-right">
-              <div class="social">
-                <a href="#" class="gplus"></a>
-              </div>
-              <a href="/home">Home</a>
-              <a href="/about">About</a>
-              <a href="/web">Web</a>
-              <a href="/games">Games</a>
-              <a href="/photography">Photography</a>
-              <a href="/blog">Blog</a>
-            </div>
-          </div>
-          <div class="copyright">
-            &copy; 2017 Brandon LaDuke
-          </div>
+          </section>
         </footer>
       </app-header-layout>
     </app-drawer-layout>
