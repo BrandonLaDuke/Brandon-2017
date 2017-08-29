@@ -16,17 +16,113 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
       :host {
         display: block;
-        --brandon-blue: red;
-        padding: 10px;
+      }
+      #header {
+        background: linear-gradient(0deg, #000, transparent 90%),
+        url(../images/home/brandonladuke.jpg);
+        background-size: cover;
+        padding: 30px;
+        height: 300px;
+        display: flex;
+      }
+      #header h1 {
+        font-size: 2em;
+        letter-spacing: 2px;
+        color: #fff;
+        margin: auto auto 1em auto;
+        text-shadow: .3em .3em .3em black;
+      }
+      #about {
+        margin: 1em;
+        padding: 1em;
+        font-size: 1.2em;
+        letter-spacing: 1.5px;
+      }
+      #about {
+        color: #fff;
+        opacity: 0.8;
+
+
+        display: none;
+      }
+
+      /* Skills */
+      #skills {
+        margin: 1em;
+
+
+        display: none;
+      }
+      #skills h2,
+      #awards h2 {
+        text-align: center;
+      }
+      #skills h3 {
+        margin: 1.5em 0 0 0.5em;
+        margin-left: 0.5em;
+      }
+      #skills ul {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
+      }
+      #skills li {
+        list-style: none;
+        padding: 0.5em;
+      }
+
+      /* Awards */
+      #awards {
+
       }
     </style>
 
-    <div class="card">
-      <div class="circle">2</div>
-      <h1>View Two</h1>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.</p>
-      <p>Id nam odio natum malorum, tibique copiosae expetenda mel ea.Detracto suavitate repudiandae no eum. Id adhuc minim soluta nam.Id nam odio natum malorum, tibique copiosae expetenda mel ea.</p>
-    </div>
+    <section id="header">
+      <h1>About Me</h1>
+    </section>
+    <section id="about">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <h3>Languages</h3>
+      <ul class="l-grid">
+        <li>HTML</li>
+        <li>CSS & Sass</li>
+        <li>Javascript</li>
+        <li>Web Components</li>
+        <li>PHP</li>
+        <li>JSON</li>
+      </ul>
+      <h3>Frameworks</h3>
+      <ul class="f-grid">
+        <li>Bootstrap</li>
+        <li>Angular</li>
+      </ul>
+      <h3>Librarys</h3>
+      <ul class="li-grid">
+        <li>Polymer</li>
+        <li>jQuery</li>
+      </ul>
+      <h3>Applications</h3>
+      <ul class="a-grid">
+        <li>Photoshop</li>
+        <li>Illustrator</li>
+        <li>After Effects</li>
+        <li>Premiere Pro</li>
+        <li>HitFilm Pro</li>
+        <li>Blender</li>
+      </ul>
+      <h3>Content Management Systems</h3>
+      <ul class="a-grid">
+        <li>WordPress</li>
+      </ul>
+    </section>
+    <section id="awards">
+      <h2>Awards</h2>
+
+    </section>
   </template>
 
   <script>
