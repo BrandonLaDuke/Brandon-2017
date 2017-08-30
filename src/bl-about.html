@@ -33,21 +33,35 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         color: #fff;
         margin: auto auto 1em auto;
         text-shadow: .3em .3em .3em black;
+        transition: ease all 500ms;
       }
       #about {
         margin: 1em;
-        padding: 1em;
+        padding: 10px 15px;
         font-size: 1.2em;
         letter-spacing: 1.5px;
         color: #fff;
         opacity: 0.8;
         grid-area: about;
+        background-color: #222;
+        border-radius: 10px;
+        transition: ease all 500ms;
       }
 
       /* Skills */
       #skills {
         margin: 1em;
         grid-area: skills;
+        background-color: var(--fall-3-5);
+        border-radius: 10px;
+        padding: 10px 15px;
+        transition: ease all 500ms;
+      }
+      h2 {
+        font-weight: 200;
+        letter-spacing: 1px;
+        font-size: 1.9em;
+        transition: ease all 500ms;
       }
       #skills h2,
       #awards h2 {
@@ -79,10 +93,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         letter-spacing: 1.1px;
       }
       #awards table tr:nth-child(2n+1){
-        background-color: var(--fall-2-3);
+        background-color: var(--fall-3-5);
       }
       #awards table tr:nth-child(2n+2){
-        background-color: var(--fall-3-3);
+        background-color: #222;
       }
 
       /* Media Querys */
@@ -119,9 +133,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         #header {
           background-position: 100% 6%;
           height: 450px;
+          position: relative;
         }
         #header h1 {
-          display: none;
+          position: absolute;
+          top: 50%;
+          right: 10%;
+          font-weight: 100;
+          font-size: 3em;
+        }
+      }
+      @media (min-width:900px) {
+        .about-wrapper {
+          display: grid;
+          grid-template-columns: 5% 1fr 1fr 5%;
+          grid-template-rows: auto;
+          grid-template-areas: "header header header header"
+          ". about skills ."
+          ". about skills ."
+          ". awards awards .";
+        }
+        h2 {
+          font-size: 2em;
+        }
+        h3 {
+          font-size: 1.5em;
+        }
+        #header h1 {
+          top: 45%;
+          right: 20%;
+        }
+        #about {
+          font-size: 1.3em;
+        }
+        #skills li {
+          font-size: 1.2em;
+        }
+        #awards {
+          margin-top: 2.5em;
+        }
+        #awards table tr td {
+          font-size: 1.3em;
+          padding: 0.5em;
         }
       }
     </style>
