@@ -24,6 +24,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         padding: 30px;
         height: 300px;
         display: flex;
+        transition: ease all 500ms;
+        grid-area: header;
       }
       #header h1 {
         font-size: 2em;
@@ -37,21 +39,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         padding: 1em;
         font-size: 1.2em;
         letter-spacing: 1.5px;
-      }
-      #about {
         color: #fff;
         opacity: 0.8;
-
-
-        display: none;
+        grid-area: about;
       }
 
       /* Skills */
       #skills {
         margin: 1em;
-
-
-        display: none;
+        grid-area: skills;
       }
       #skills h2,
       #awards h2 {
@@ -73,56 +69,175 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       /* Awards */
       #awards {
+        margin-left: 1em;
+        grid-area: awards;
+      }
+      #awards table tr td {
+        font-size: 1.1em;
+        padding: 1px .2em;
+        color: #ddd;
+        letter-spacing: 1.1px;
+      }
+      #awards table tr:nth-child(2n+1){
+        background-color: var(--fall-2-3);
+      }
+      #awards table tr:nth-child(2n+2){
+        background-color: var(--fall-3-3);
+      }
 
+      /* Media Querys */
+      @media (min-width:528px) {
+        #header {
+          background-position: 100% 6%;
+          height: 400px;
+        }
+        table {
+          margin: auto;
+        }
+      }
+      @media (min-width:572px) {
+        #header {
+          background-position: 100% 6%;
+          height: 450px;
+        }
+        #skills ul {
+          display: grid;
+          grid-template-rows: auto;
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+      }
+      @media (min-width:750px) {
+        .about-wrapper {
+          display: grid;
+          grid-template-columns: 5% 1fr 5%;
+          grid-template-rows: auto;
+          grid-template-areas: "header header header"
+          ". about ."
+          ". skills ."
+          ". awards .";
+        }
+        #header {
+          background-position: 100% 6%;
+          height: 450px;
+        }
+        #header h1 {
+          display: none;
+        }
       }
     </style>
+    <div class="about-wrapper">
+      <section id="header">
+        <h1>About Me</h1>
+      </section>
+      <section id="about">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </section>
+      <section id="skills">
+        <h2>Skills</h2>
+        <h3>Languages</h3>
+        <ul class="l-grid">
+          <li>HTML</li>
+          <li>CSS & Sass</li>
+          <li>Javascript</li>
+          <li>Web Components</li>
+          <li>SVG</li>
+          <li>PHP</li>
+          <li>JSON</li>
+          <li>MySQL</li>
+        </ul>
+        <h3>Frameworks</h3>
+        <ul class="f-grid">
+          <li>Bootstrap</li>
+          <li>Angular</li>
+        </ul>
+        <h3>Librarys</h3>
+        <ul class="li-grid">
+          <li>Polymer</li>
+          <li>jQuery</li>
+        </ul>
+        <h3>Applications</h3>
+        <ul class="a-grid">
+          <li>Photoshop</li>
+          <li>Illustrator</li>
+          <li>After Effects</li>
+          <li>Premiere Pro</li>
+          <li>HitFilm Pro</li>
+          <li>Blender</li>
+        </ul>
+        <h3>Content Management Systems</h3>
+        <ul class="c-grid">
+          <li>WordPress</li>
+        </ul>
+        <h3>Production Tools</h3>
+        <ul class="p-grid">
+          <li>Teleprompter</li>
+          <li>TriCaster</li>
+        </ul>
+      </section>
+      <section id="awards">
+        <h2>Awards</h2>
+        <table>
+          <tr>
+            <td>2017</td>
+            <td>SkillsUSA Web Design</td>
+            <td>Nationals</td>
+            <td>Post-Secondary</td>
+            <td>Bronze</td>
+          </tr>
+          <tr>
+            <td>2017</td>
+            <td>SkillsUSA Web Design</td>
+            <td>State</td>
+            <td>Post-Secondary</td>
+            <td>Gold</td>
+          </tr>
+          <tr>
+            <td>2017</td>
+            <td>SkillsUSA Web Design</td>
+            <td>Regionals</td>
+            <td>Post-Secondary</td>
+            <td>Gold</td>
+          </tr>
+          <tr>
+            <td>2016</td>
+            <td>SkillsUSA Web Design</td>
+            <td>Nationals</td>
+            <td>Post-Secondary</td>
+            <td>Bronze</td>
+          </tr>
+          <tr>
+            <td>2016</td>
+            <td>SkillsUSA Web Design</td>
+            <td>State</td>
+            <td>Post-Secondary</td>
+            <td>Gold</td>
+          </tr>
+          <tr>
+            <td>2016</td>
+            <td>SkillsUSA Web Design</td>
+            <td>Regionals</td>
+            <td>Post-Secondary</td>
+            <td>Gold</td>
+          </tr>
+          <tr>
+            <td>2015</td>
+            <td>SkillsUSA Web Design</td>
+            <td>State</td>
+            <td>Secondary</td>
+            <td>Gold</td>
+          </tr>
+          <tr>
+            <td>2015</td>
+            <td>SkillsUSA Web Design</td>
+            <td>Regionals</td>
+            <td>Secondary</td>
+            <td>Gold</td>
+          </tr>
+        </table>
+      </section>
+    </div>
 
-    <section id="header">
-      <h1>About Me</h1>
-    </section>
-    <section id="about">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </section>
-    <section id="skills">
-      <h2>Skills</h2>
-      <h3>Languages</h3>
-      <ul class="l-grid">
-        <li>HTML</li>
-        <li>CSS & Sass</li>
-        <li>Javascript</li>
-        <li>Web Components</li>
-        <li>PHP</li>
-        <li>JSON</li>
-      </ul>
-      <h3>Frameworks</h3>
-      <ul class="f-grid">
-        <li>Bootstrap</li>
-        <li>Angular</li>
-      </ul>
-      <h3>Librarys</h3>
-      <ul class="li-grid">
-        <li>Polymer</li>
-        <li>jQuery</li>
-      </ul>
-      <h3>Applications</h3>
-      <ul class="a-grid">
-        <li>Photoshop</li>
-        <li>Illustrator</li>
-        <li>After Effects</li>
-        <li>Premiere Pro</li>
-        <li>HitFilm Pro</li>
-        <li>Blender</li>
-      </ul>
-      <h3>Content Management Systems</h3>
-      <ul class="a-grid">
-        <li>WordPress</li>
-      </ul>
-    </section>
-    <section id="awards">
-      <h2>Awards</h2>
-
-    </section>
   </template>
 
   <script>
