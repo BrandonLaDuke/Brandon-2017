@@ -27,8 +27,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <style>
       :host {
-        --app-primary-color:  #4285f4;
-        --app-secondary-color: black;
 
         --bkg-light:          #eeeeee;
         --bkg-dark:           #222222;
@@ -54,6 +52,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         --fall-3-4:           #cbb428;
         --fall-3-5:           #627d16;
 
+        --brandon-white:      #ffffff;
+        --main-color:  var(--fall-1-3);
+        --second-color: black;
+        --background-color: var(--fall-1-3);
+        --nav-txt-color: black;
+        --social-link-color: #5fcf80;
+        --social-link-hover-color: orange;
+
         --gutter:             1em;
       }
 
@@ -64,10 +70,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       app-header {
         color: #fff;
         background-color: transparent;
-      }
-
-      app-header paper-icon-button {
-        --paper-icon-button-ink-color: white;
       }
 
       .name-header {
@@ -83,12 +85,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         display: block;
         padding: 0 16px;
         text-decoration: none;
-        color: var(--app-secondary-color);
+        color: var(--nav-txt-color);
         line-height: 40px;
       }
 
       .drawer-list a.iron-selected {
-        color: black;
+        color: var(--nav-txt-color);
         font-weight: bold;
       }
       [drawer-toggle] {
@@ -104,12 +106,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       /* Footer Styles */
       footer {
-        background: linear-gradient(#000, #000000 10%);
+        background: linear-gradient(transparent, #000000 10%);
         padding: 1em;
+        margin-top: var(--gutter);
       }
       #social h1 {
         margin-top: 2em;
-        color: #ffffff;
+        color: var(--brandon-white);
         text-align: center;
         font-weight: 100;
         text-transform: uppercase;
@@ -126,14 +129,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .social-item {
         list-style: none;
         margin: auto;
-        background-color: #5fcf80;
+        background-color: var(--social-link-color);
         border-radius: 50%;
         width: 60px;
         height: 60px;
         transition: ease all 500ms;
       }
       .social-item:hover {
-        background-color: orange;
+        background-color: var(--social-link-hover-color);
       }
       .social-item a {
         height: inherit;
